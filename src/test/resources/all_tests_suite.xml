@@ -3,18 +3,18 @@
 <suite name="All Pet Store Tests" parallel="tests" thread-count="2">
 
     <listeners>
-        <listener class-name="utils.testng.listeners.TestListener"/>
+        <listener class-name="examples.utils.testng.listeners.TestListener"/>
     </listeners>
 
-    <test name="Negative Login Tests">
+    <test name="Smokes">
         <classes>
-            <class name="tests.FailedLoginTests"/>
+            <class name="examples.tests.smokes.MainPageTest"/>
         </classes>
     </test>
 
-    <test name="Positive Login Tests">
+    <test name="Functional">
         <classes>
-            <class name="tests.PositiveLoginTests"/>
+            <class name="examples.tests.functional.*"/>
         </classes>
     </test>
 

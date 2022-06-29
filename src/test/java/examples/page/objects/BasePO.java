@@ -19,7 +19,7 @@ public abstract class BasePO {
 
     public void navigateBack(){
         DriverManager.getWebDriver().navigate().back();
-        log().info("Back to the previous page");
+        log().info("Go to the previous page");
     }
 
 }

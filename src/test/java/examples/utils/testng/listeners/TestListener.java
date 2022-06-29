@@ -9,7 +9,6 @@ import examples.utils.ScreenShotMaker;
 
 public class TestListener implements ITestListener {
 
-    //Instancja Logger - do logowania wiadomości
     private Logger logger = LogManager.getLogger(TestListener.class);
 
     @Override

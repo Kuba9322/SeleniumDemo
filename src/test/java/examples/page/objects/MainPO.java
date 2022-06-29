@@ -23,34 +23,39 @@ public class MainPO extends BasePO{
     private WebElement interactions;
 
     @Step("Click on Enter Store link")
-    public void clickOnElementsButton() {
+    public ElementsPO clickOnElementsButton() {
         WaitForElement.waitUntilElementIsClickable(elements);
         elements.click();
         log().info("Clicked on Element link");
+        return new ElementsPO();
     }
 
     @Step("Click on Enter Store link")
-    public void clickOnFormsButton() {
+    public ElementsPO clickOnFormsButton() {
         forms.click();
         log().info("Clicked on Forms link");
+        return new ElementsPO();
     }
 
     @Step("Click on Enter Store link")
-    public void clickOnAlertsButton() {
+    public ElementsPO clickOnAlertsButton() {
         alertsFrameAndWindows.click();
         log().info("Clicked on Alerts Frames And Windows link");
+        return new ElementsPO();
     }
 
     @Step("Click on Enter Store link")
-    public void clickOnWidgetsButton() {
+    public ElementsPO clickOnWidgetsButton() {
         widgets.click();
         log().info("Clicked on Widgets link");
+        return new ElementsPO();
     }
 
     @Step("Click on Enter Store link")
-    public void clickOnInteractionsButton() {
+    public ElementsPO clickOnInteractionsButton() {
         interactions.click();
         log().info("Clicked on Interactions link");
+        return new ElementsPO();
     }
 
 

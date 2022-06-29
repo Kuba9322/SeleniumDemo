@@ -1,21 +1,25 @@
 package examples.tests;
 
+import com.github.javafaker.Faker;
 import examples.configuration.ConfigurationProperties;
 import examples.configuration.PropertiesLoader;
 import examples.driver.BrowserType;
 import examples.driver.manager.DriverManager;
 import examples.driver.manager.DriverUtils;
 import io.qameta.allure.Step;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.*;
 
-import java.time.Duration;
 import java.util.Properties;
 
 import static examples.navigation.ApplicationURLs.APPLICATION_URL;
 
 public class TestBase {
+
+    private Logger logger = LogManager.getLogger(this.getClass().getName());
+
+    private Faker dataProvider = new Faker();
 
     @Step("Loading configuration from configuration.properties")
     @BeforeClass
@@ -39,6 +43,14 @@ public class TestBase {
     @AfterMethod
     public void afterTest() {
         DriverManager.disposeDriver();
+    }
+
+    protected Logger log() {
+        return logger;
+    }
+
+    protected Faker getDataProvider() {
+        return dataProvider;
     }
 
 }

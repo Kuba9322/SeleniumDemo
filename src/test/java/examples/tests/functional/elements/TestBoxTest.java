@@ -6,7 +6,7 @@ import examples.tests.TestBase;
 import io.qameta.allure.Description;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import java.util.Arrays;
@@ -26,7 +26,7 @@ public class TestBoxTest extends TestBase {
 
     private String permanentAddress;
 
-    @BeforeMethod
+    @BeforeClass
     private void initData() {
         fullName = getDataProvider().name().fullName();
         email = getDataProvider().internet().emailAddress();
@@ -37,12 +37,11 @@ public class TestBoxTest extends TestBase {
     @Severity(SeverityLevel.NORMAL)
     @Test
     @Description("Text box test")
-    public void testBoxFunctionalTest() {
-        getDataProvider().name().fullName();
+    public void textBoxFunctionalTest() {
 
         MainPO mainPO = new MainPO();
         TextBoxFieldContainerPO testBoxPage = mainPO.clickOnElementsButton()
-                .clickOnTextBoxButton()
+                .clickOnTextBoxTab()
                 .fillFullNameInput(fullName)
                 .fillUserEmailInput(email)
                 .fillCurrentAddressInputInput(currentAddress)

@@ -5,7 +5,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class ElementsPO extends BasePO{
+public class ElementsPO extends BasePO {
 
     @FindBy(xpath = "//li/span[contains(text(),'Text Box')]")
     private WebElement textBoxButton;
@@ -34,12 +34,20 @@ public class ElementsPO extends BasePO{
     @FindBy(xpath = "//li/span[contains(text(),'Dynamic Properties')]")
     private WebElement dynamicProperties;
 
-    @Step("Click on Text Box button")
-    public TextBoxFieldContainerPO clickOnTextBoxButton(){
+    @Step("Click on Text Box tab")
+    public TextBoxFieldContainerPO clickOnTextBoxTab() {
         WaitForElement.waitUntilElementIsClickable(textBoxButton);
         textBoxButton.click();
-        log().info("Clicked on TextBoxButton");
+        log().info("Clicked on TextBoxTab");
         return new TextBoxFieldContainerPO();
+    }
+
+    @Step("Click on Check Box tab")
+    public CheckBoxPO clickOnCheckBoxTab() {
+        WaitForElement.waitUntilElementIsClickable(checkBoxButton);
+        checkBoxButton.click();
+        log().info("Clicked on CheckBoxTab");
+        return new CheckBoxPO();
     }
 
 }

@@ -47,12 +47,6 @@ public class CheckBoxPO extends BasePO {
         return new CheckBoxPO();
     }
 
-    @Step("Get result text")
-    public String getResultText(){
-        WaitForElement.waitUntilElementIsClickable(result);
-        return result.getText();
-    }
-
     @Step("Click on Home toggle")
     public CheckBoxPO expandHomeToggle() {
         expandToggle(checkBoxHomeRow);

@@ -38,7 +38,7 @@ public class ElementsPO extends BasePO {
     public TextBoxFieldContainerPO clickOnTextBoxTab() {
         WaitForElement.waitUntilElementIsClickable(textBoxButton);
         textBoxButton.click();
-        log().info("Clicked on TextBoxTab");
+        log().info("Clicked on Text Box Tab");
         return new TextBoxFieldContainerPO();
     }
 
@@ -46,8 +46,16 @@ public class ElementsPO extends BasePO {
     public CheckBoxPO clickOnCheckBoxTab() {
         WaitForElement.waitUntilElementIsClickable(checkBoxButton);
         checkBoxButton.click();
-        log().info("Clicked on CheckBoxTab");
+        log().info("Clicked on Check Box Tab");
         return new CheckBoxPO();
+    }
+
+    @Step("Click on Radio Button tab")
+    public RadioButtonPO clickOnRadioButtonTab() {
+        WaitForElement.waitUntilElementIsClickable(radioButton);
+        radioButton.click();
+        log().info("Clicked on Radio Button Tab");
+        return new RadioButtonPO();
     }
 
 }

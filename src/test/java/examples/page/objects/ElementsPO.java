@@ -58,4 +58,12 @@ public class ElementsPO extends BasePO {
         return new RadioButtonPO();
     }
 
+    @Step("Click on Web Tables tab")
+    public WebTablesPO clickOnWebTablesTab() {
+        WaitForElement.waitUntilElementIsClickable(webTablesButton);
+        webTablesButton.click();
+        log().info("Clicked on Web Tables Tab");
+        return new WebTablesPO();
+    }
+
 }

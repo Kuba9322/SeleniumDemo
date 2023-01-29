@@ -16,7 +16,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.hasToString;
 
-public class TestBoxTest extends TestBase {
+public class TextBoxTest extends TestBase {
 
     private String fullName;
 

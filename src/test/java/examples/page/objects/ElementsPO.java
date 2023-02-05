@@ -66,4 +66,12 @@ public class ElementsPO extends BasePO {
         return new WebTablesPO();
     }
 
+    @Step("Click on Button tab")
+    public ButtonPO clickOnButtonTab() {
+        WaitForElement.waitUntilElementIsClickable(buttons);
+        buttons.click();
+        log().info("Clicked on Button Tab");
+        return new ButtonPO();
+    }
+
 }
